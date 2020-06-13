@@ -1,11 +1,20 @@
 module RentalAgeCheck
     def is_old_enough_to_rent_car(age)
+        if age >= 25
+            "Here's the keys!"
+        else
+            "Nope, you have 2 more years"    
+        end  
     end
 end
 World RentalAgeCheck
 
 Given("age is 23") do
     @age = 23
+end
+
+Given("age is 25") do
+    @age = 25
 end
     
 When("I ask if I'm old enough to rent a car") do
