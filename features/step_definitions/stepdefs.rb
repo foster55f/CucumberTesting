@@ -3,22 +3,14 @@ module RentalAgeCheck
         if age >= 25
             "Here's the keys!"
         else
-            "Nope, you have #{25-age} more years"    
+            "Nope, you have #{25-age} more years to go but come back then!"    
         end  
     end
 end
 World RentalAgeCheck
 
-Given("age is 23") do
-    @age = 23
-end
-
-Given("age is 25") do
-    @age = 25
-end
-
-Given("age is 21") do
-    @age = 21
+Given("age is {int}") do |given_age|
+    @age = given_age
 end
     
 When("I ask if I'm old enough to rent a car") do
