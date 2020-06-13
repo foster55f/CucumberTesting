@@ -20,3 +20,29 @@ end
 Then("I should be told {string}") do |expected_answer|
     expect(@actual_answer).to eq(expected_answer)
 end
+
+
+
+module OpenOrNotCheck
+    def are_we_open_that_day(day)
+        if day == "Sunday"
+            "We are closed on Sundays!"
+        else
+            "We look forward to seeing you then"
+        end  
+    end
+end
+World OpenOrNotCheck
+
+
+Given("plan to return car on {string}") do |given_day|
+    @day = given_day
+end
+    
+When('I say I plan to return car on this day') do
+    @return_plan_reply = are_we_open_that_day(@day)
+  end
+    
+  Then('I expect to be told {string}') do |return_reply_expected|
+    expect(@return_plan_reply).to eq(return_reply_expected)
+  end
