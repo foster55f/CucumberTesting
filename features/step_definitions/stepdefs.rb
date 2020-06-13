@@ -3,7 +3,7 @@ module RentalAgeCheck
         if age >= 25
             "Here's the keys!"
         else
-            "Nope, you have 2 more years"    
+            "Nope, you have #{25-age} more years"    
         end  
     end
 end
@@ -15,6 +15,10 @@ end
 
 Given("age is 25") do
     @age = 25
+end
+
+Given("age is 21") do
+    @age = 21
 end
     
 When("I ask if I'm old enough to rent a car") do

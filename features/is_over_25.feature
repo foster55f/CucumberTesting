@@ -10,3 +10,8 @@ Feature: Are you old enough to rent a car
     Given age is 25
     When I ask if I'm old enough to rent a car
     Then I should be told "Here's the keys!"
+
+  Scenario: 21 isn't old enough to rent a car
+    Given age is 21
+    When I ask if I'm old enough to rent a car
+    Then I should be told "Nope, you have 4 more years"
